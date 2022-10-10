@@ -1,0 +1,5 @@
+.footer {
+    height: 300px;
+    background-image: linear-gradient(140deg, #000000 0%, #0e1d0e 50%, #014211 75%);
+    color: white;
+}

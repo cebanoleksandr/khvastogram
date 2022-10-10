@@ -1,0 +1,83 @@
+@font-face {
+    font-family: Roboto;
+    src: url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,300&display=swap');
+}
+
+.goods {
+    display: flex;
+}
+
+.goods__filter {
+    border: 1px solid black;
+    min-width: 200px;
+    margin-right: 10px;
+}
+
+.goods__cards {
+    margin: 0 10px;
+}
+
+.goods__content {
+    display: grid;
+    grid-template-areas: 
+    "t c"
+    "m m";
+    grid-template-columns: 30fr 1fr;
+}
+
+.content__title {
+    text-align: center;
+    grid-area: t;
+}
+
+.card_main {
+    grid-area: c;
+}
+
+.content__main {
+    display: flex;
+    flex-wrap: wrap;
+    grid-area: m;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.card__img {
+    width: 25px;
+    margin-top: 16px;
+    margin-right: 10px;
+    padding: 10px;
+    transition: 0.5s;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.card__img:hover {
+    background-color: rgba(62, 255, 4, 0.349);
+    border-radius: 10px;
+}
+
+.counter {
+    position: relative;
+    top: -50px;
+    left: 26px;
+    color: red;
+    font-weight: bold;
+    background-color: gold;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+
+.add-message {
+    text-align: center;
+    position: fixed;
+    top: 50px;
+    color: green;
+    font-size: 2rem;
+}
+
+.hidden {
+    visibility: hidden;
+}

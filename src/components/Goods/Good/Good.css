@@ -1,0 +1,105 @@
+.good {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 350px;
+    
+    margin-right: 15px;
+    margin-bottom: 25px;
+    transition: 0.5s;
+}
+
+.l {
+    box-sizing: border-box;
+    border: 1px solid green;
+    border-radius: 10px;
+}
+
+.d {
+    box-sizing: border-box;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.good__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 170px;
+    height: 320px;
+}
+
+.good:hover {
+    background-color: rgba(6, 211, 16, 0.3);
+}
+
+.good__image {
+    text-align: center;
+}
+
+.good__img {
+    height: 134px;
+    width: 160px;
+}
+
+.title_link {
+    text-decoration: none;
+    color: green;
+    transition: 0.5s;
+}
+
+.title_link:hover {
+    color: rgb(0, 196, 0);
+}
+
+.good__title {
+    font-family: Roboto;
+    font-weight: bold;
+}
+
+.good__code {
+    font-family: Roboto;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+
+.review {
+    display: flex;
+    justify-content: space-between;
+    font-family: Roboto;
+}
+
+.star {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.good__price {
+    display: flex;
+    justify-content: space-between;
+    font-family: Roboto;
+}
+
+.good__add {
+    text-align: center;
+}
+
+.button-add {
+    width: 170px;
+    height: 30px;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 1.4rem;
+    background-color: green;
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.button-add:hover {
+    background-color: white;
+    color: green;
+}

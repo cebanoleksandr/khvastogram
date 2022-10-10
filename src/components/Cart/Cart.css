@@ -1,0 +1,148 @@
+.cart {
+    margin: 10px;
+}
+
+.cart__title {
+    text-align: center;
+}
+
+.cart_qwt {
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete_everything {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: rgba(255, 0, 0, 0.7);
+    transition: 0.5s;
+}
+
+.delete_everything:hover {
+    border: 1px solid red;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.delete_everything:hover {
+    color: red;
+}
+
+.goods_title {
+    margin-right: 40px;
+    text-align: center;
+    /* border: 1px solid black; */
+}
+
+.good_data {
+    text-align: center;
+}
+
+.cart__table {
+    border: 1px solid green;
+    border-radius: 10px;
+    margin: 10px auto;
+    padding: 20px;
+    width: 600px;
+    background-color: rgba(62, 255, 4, 0.349);
+}
+
+.remove_good {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: white;
+    transition: 0.5s;
+    height: 20px;
+}
+
+.remove_good:hover {
+    background-color: rgba(255, 0, 0, 0.7);
+}
+
+.design_order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.design_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    background-color: green;
+    width: 600px;
+    height: 50px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: Roboto;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.design_btn:hover {
+    color: green;
+    border: 1px solid green;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+@media(max-width: 767px) {
+    .design_btn {
+        width: 400px;
+    }
+    .cart__table {
+        width: 400px;
+    }
+}
+
+.count_container {
+    display: flex;
+}
+
+.count_decrease {
+    width: 40px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    margin: 10px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.count_decrease:hover {
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+}
+
+.count_main {
+    margin: 10px;
+}
+
+.count_increase {
+    width: 40px;
+    height: 20px;
+    border: 1px solid white;
+    background-color: green;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    margin: 10px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.count_increase:hover {
+    background-color: white;
+    color: green;
+    border: 1px solid green;
+}

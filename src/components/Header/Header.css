@@ -1,0 +1,104 @@
+.header {
+    position: sticky;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin-top: 0;
+    max-width: 1100px;
+    backdrop-filter: blur(5px);
+    margin-bottom: 10px;
+}
+
+.nav {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.nav__list {
+    display: none;
+    text-align: center;
+}
+
+.nav__toggler-label {
+    display: inline-block;
+    font-size: 2rem;
+    color: white;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.nav__toggler-label::before {
+    content: '=';
+}
+
+.nav__toggler {
+    display: none;
+}
+
+.nav__toggler:checked + .nav__toggler-label::before {
+    content: 'x';
+}
+
+.nav__toggler:checked ~ .nav__list {
+    display: block;
+}
+
+@media(min-width: 768px) {
+    .nav__list {
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+        margin: 0;
+    }
+    .nav__toggler-label {
+        display: none;
+    }
+    
+}
+
+.nav__item {
+    list-style: none;
+    transition: 0.5s;
+}
+
+.nav__link {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 5px;
+    transition: 0.5s;
+}
+
+.active {
+    background-color: grey;
+    color: gold;
+}
+
+.nav__item:hover {
+    background-color: grey;
+    color: gold;
+}
+
+.nav__link:hover {
+    color: gold;
+}
+
+.headerHover:hover {
+    background-color: grey;
+}
+
+.theme {
+    width: 25px;
+    height: 25px;
+    margin: auto;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dark {
+    color: white;
+    background-color: rgb(20, 20, 20);
+}
+
+.hidden {
+    display: none;
+}
