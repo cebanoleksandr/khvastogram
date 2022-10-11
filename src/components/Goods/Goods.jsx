@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Good from './Good/Good';
 import './Goods.css';
 
-const Goods = ({goodsFromServer, arr, dispatch, countGoods, notification}) => {
+const Goods = ({goodsFromServer, arr, dispatch, goodsInCart, notification}) => {
     let [cart, setCart] = useState(goodsFromServer);
     let sortPrice = ()=> {
       setCart(goodsFromServer.sort((a, b) => a.price - b.price));
@@ -35,7 +35,7 @@ const Goods = ({goodsFromServer, arr, dispatch, countGoods, notification}) => {
             <div className='card_main'>
               <NavLink to="/cart">
                 <img src="https://cdn-icons-png.flaticon.com/512/126/126083.png" className='card__img' alt="card" />
-                <div className={typeof countGoods === 'number' ? 'counter' : ''}>{ countGoods }</div>
+                <div className={goodsInCart.length ? 'counter' : ''}>{ goodsInCart.length ? goodsInCart.length : '' }</div>
               </NavLink>
             </div>
 

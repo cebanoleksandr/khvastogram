@@ -1,13 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { addGoodsCounterCreator, addNotificationCreator, addGoodInCartCreator } from '../../../redux/goods_reducer';
+import { addNotificationCreator, addGoodInCartCreator } from '../../../redux/goods_reducer';
 import './Good.css';
 
 const Good = ({item, handleStar, star, dispatch}) => {
     const addToCard = () => {
         dispatch(addGoodInCartCreator(item));   
-        
-        dispatch(addGoodsCounterCreator());
         dispatch(addNotificationCreator('The goods was added to cart'));
         setTimeout(() => {
           dispatch(addNotificationCreator(''));

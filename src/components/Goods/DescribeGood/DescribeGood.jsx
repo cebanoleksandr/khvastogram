@@ -1,15 +1,13 @@
 import React from "react";
 import { useParams } from 'react-router-dom';
-import { addGoodsCounterCreator, addNotificationCreator, addGoodInCartCreator } from '../../../redux/goods_reducer';
+import { addNotificationCreator, addGoodInCartCreator } from '../../../redux/goods_reducer';
 import './DescribeGood.css';
 
 const DescribeGood = ({goodsFromServer, dispatch, notification}) => {
     const {goodsId} = useParams();
     const item = goodsFromServer[goodsId];
     const addToCart = () => {
-        dispatch(addGoodInCartCreator(item));   
-        
-        dispatch(addGoodsCounterCreator());
+        dispatch(addGoodInCartCreator(item));
         dispatch(addNotificationCreator('The goods was added to cart'));
         setTimeout(() => {
           dispatch(addNotificationCreator(''));

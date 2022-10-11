@@ -1,4 +1,3 @@
-const ADD_GOODS_COUNTER = 'ADD_GOODS_COUNTER';
 const ADD_NOTIFICATION = 'ADD_NOTIFICATION';
 const ADD_GOOD_IN_CART = 'ADD_GOOD_IN_CART';
 const REMOVE_ALL_GOODS_FROM_CART = 'REMOVE_ALL_GOODS_FROM_CART';
@@ -31,44 +30,41 @@ let initialState = {
         'https://raw.githubusercontent.com/mate-academy/layout_stars/95ab9b97220343f7c24c7e28ceafe618f8ba050e/src/images/star.svg',
         'https://raw.githubusercontent.com/mate-academy/layout_stars/95ab9b97220343f7c24c7e28ceafe618f8ba050e/src/images/star.svg',
     ],
-    countGoods: '',
     addNotification: '',
     goodsInCart: [],
 }
 
 const goodsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_GOODS_COUNTER:
-            if (state.countGoods === '') {
-                state.countGoods = 0;
-            }
-            state.countGoods++;
-            return state;
-
         case ADD_NOTIFICATION:
-            state.addNotification = action.notification;
-            return state;
+            return {
+                ...state,
+                addNotification: action.notification,
+            }
 
         case ADD_GOOD_IN_CART:
-            state.goodsInCart.push(action.newGood);
-            return state;
+            return {
+                ...state,
+                goodsInCart: [...state.goodsInCart, action.newGood],
+            }
 
         case REMOVE_ALL_GOODS_FROM_CART:
-            state.goodsInCart = [];
-            state.countGoods = '';
-            return state;
+            return {
+                ...state,
+                goodsInCart: [],
+                countGoods: '',
+            }
 
         case REMOVE_GOOD_FROM_CART:
-            state.goodsInCart = state.goodsInCart.filter(a => a.id !== action.goodId);
-            state.countGoods = state.goodsInCart.length;
-            if (state.countGoods === 0) {
-                state.countGoods = '';
+            let goods = state.goodsInCart.filter(a => a.id !== action.goodId);
+            
+            return {
+                ...state,
+                goodsInCart: goods,
             }
-            return state;
 
         case INCREASE_COUNT:
-            state.countGoods++;
-            state.goodsInCart = [];
+            let newGoods = [];
             for (let i = 0; i < action.arr.length; i++) {
                 if (action.arr[i].id === action.id) {
                     action.arr[i].count++;
@@ -79,18 +75,17 @@ const goodsReducer = (state = initialState, action) => {
                 let count = action.arr[i].count;
                 for (let j = 0; j < count; j++) {
                     action.arr[i].count = 1;
-                    state.goodsInCart.push(action.arr[i]);
+                    newGoods.push(action.arr[i]);
                 }
             }
             
-            return state;
+            return {
+                ...state,
+                goodsInCart: newGoods,
+            };
 
         case DECREASE_COUNT:
-            state.countGoods--;
-            if (state.countGoods === 0) {
-                state.countGoods = '';
-            }
-            state.goodsInCart = [];
+            let newGoodsArr = [];
             for (let i = 0; i < action.arr.length; i++) {
                 if (action.arr[i].id === action.id) {
                     action.arr[i].count--;
@@ -101,11 +96,14 @@ const goodsReducer = (state = initialState, action) => {
                 let count = action.arr[i].count;
                 for (let j = 0; j < count; j++) {
                     action.arr[i].count = 1;
-                    state.goodsInCart.push(action.arr[i]);
+                    newGoodsArr.push(action.arr[i]);
                 }
             }
             
-            return state;
+            return {
+                ...state,
+                goodsInCart: newGoodsArr,
+            };
 
         default:
             return state;
@@ -113,11 +111,6 @@ const goodsReducer = (state = initialState, action) => {
 }
 
 //actionCreators
-export const addGoodsCounterCreator = () => {
-    return {
-        type: ADD_GOODS_COUNTER,
-    }
-}
 
 export const addNotificationCreator = (notification) => {
     return {

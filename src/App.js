@@ -23,7 +23,7 @@ const App = ({state, dispatch}) => {
                 goodsFromServer={state.goodsPage.goodsFromServer} 
                 arr={state.goodsPage.arrStars}
                 dispatch={dispatch}
-                countGoods={state.goodsPage.countGoods}
+                goodsInCart={state.goodsPage.goodsInCart}
                 notification={state.goodsPage.addNotification} />} 
             />
             <Route path='/goods/:goodsId' element={<DescribeGood 
