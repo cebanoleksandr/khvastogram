@@ -56,7 +56,7 @@ const goodsReducer = (state = initialState, action) => {
             }
 
         case REMOVE_GOOD_FROM_CART:
-            let goods = state.goodsInCart.filter(a => a.id !== action.goodId);
+            let goods = [...state.goodsInCart].filter(a => a.id !== action.goodId);
             
             return {
                 ...state,
